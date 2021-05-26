@@ -92,12 +92,19 @@
                                     <action selector="agregarTapped:" destination="21l-ky-97M" eventType="touchUpInside" id="5ZG-DI-62z"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="m6g-aA-yCT">
+                                <rect key="frame" x="18" y="403" width="378" height="31"/>
+                                <connections>
+                                    <action selector="changeAudio:" destination="21l-ky-97M" eventType="valueChanged" id="RFD-OY-cuZ"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="W8U-8l-ra7" firstAttribute="centerX" secondItem="1E2-kr-LHG" secondAttribute="centerX" id="1Md-0r-Ds1"/>
                             <constraint firstItem="1aL-07-BVP" firstAttribute="top" secondItem="FvK-VR-pth" secondAttribute="bottom" constant="20" id="1b8-DZ-rGX"/>
                             <constraint firstItem="1aL-07-BVP" firstAttribute="centerX" secondItem="1E2-kr-LHG" secondAttribute="centerX" id="CSk-oF-Q2q"/>
+                            <constraint firstItem="m6g-aA-yCT" firstAttribute="leading" secondItem="a5T-up-XXJ" secondAttribute="leading" constant="20" id="GbD-3L-MEK"/>
                             <constraint firstItem="FvK-VR-pth" firstAttribute="top" secondItem="W8U-8l-ra7" secondAttribute="bottom" constant="20" id="KSW-s7-2DY"/>
                             <constraint firstItem="a5T-up-XXJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FvK-VR-pth" secondAttribute="trailing" id="QGK-HL-YsF"/>
                             <constraint firstItem="NYT-7K-VmY" firstAttribute="centerX" secondItem="1E2-kr-LHG" secondAttribute="centerX" id="Sbf-vU-4wD"/>
@@ -106,9 +113,11 @@
                             <constraint firstItem="FvK-VR-pth" firstAttribute="leading" secondItem="a5T-up-XXJ" secondAttribute="leading" constant="20" id="ckS-ug-EF5"/>
                             <constraint firstItem="d8E-Fw-g3l" firstAttribute="centerX" secondItem="1E2-kr-LHG" secondAttribute="centerX" id="j67-bm-yvJ"/>
                             <constraint firstItem="NYT-7K-VmY" firstAttribute="top" secondItem="a5T-up-XXJ" secondAttribute="top" constant="20" id="kL6-lY-PWD"/>
+                            <constraint firstItem="m6g-aA-yCT" firstAttribute="top" secondItem="1aL-07-BVP" secondAttribute="bottom" constant="20" id="kpq-p8-MhC"/>
                             <constraint firstItem="W8U-8l-ra7" firstAttribute="top" secondItem="d8E-Fw-g3l" secondAttribute="bottom" constant="30" id="smY-ME-ajk"/>
                             <constraint firstItem="a5T-up-XXJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W8U-8l-ra7" secondAttribute="trailing" id="w73-db-3U2"/>
                             <constraint firstItem="W8U-8l-ra7" firstAttribute="leading" secondItem="a5T-up-XXJ" secondAttribute="leading" constant="20" id="wS0-y1-QNR"/>
+                            <constraint firstItem="a5T-up-XXJ" firstAttribute="trailing" secondItem="m6g-aA-yCT" secondAttribute="trailing" constant="20" id="zTH-LW-8ur"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a5T-up-XXJ"/>
                     </view>
@@ -118,6 +127,7 @@
                         <outlet property="grabarButton" destination="NYT-7K-VmY" id="uAb-vX-7Lt"/>
                         <outlet property="nombreTextField" destination="FvK-VR-pth" id="OMY-oS-uiP"/>
                         <outlet property="reproducirButton" destination="d8E-Fw-g3l" id="Ldn-Pa-17J"/>
+                        <outlet property="slider" destination="m6g-aA-yCT" id="rls-sQ-jcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z3-Xe-haK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

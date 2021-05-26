@@ -7,6 +7,7 @@ class SoundViewController: UIViewController {
     @IBOutlet weak var reproducirButton: UIButton!
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var agregarButton: UIButton!
+    @IBOutlet weak var slider: UISlider!
     
     var grabarAudio:AVAudioRecorder?
     var reproducirAudio:AVAudioPlayer?
@@ -17,6 +18,9 @@ class SoundViewController: UIViewController {
         configurarGrabacion()
         reproducirButton.isEnabled = false
         agregarButton.isEnabled = false
+        slider.maximumValue = Float(reproducirAudio!.duration)
+        
+        var timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: "updateSlider", userInfo: nil, repeats: true)
     }
     
     func configurarGrabacion(){
@@ -72,5 +76,14 @@ class SoundViewController: UIViewController {
         grabacion.audio = NSData(contentsOf: audioURL!)! as Data
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
+    }
+    @IBAction func changeAudio(_ sender: Any) {
+        reproducirAudio!.stop()
+        reproducirAudio!.currentTime = TimeInterval(slider.value)
+        reproducirAudio!.prepareToPlay()
+        reproducirAudio!.play()
+    }
+    func updateSlider(){
+        slider.value = Float(reproducirAudio!.currentTime)
     }
 }
